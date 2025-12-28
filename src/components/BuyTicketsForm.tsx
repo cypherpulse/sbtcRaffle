@@ -128,7 +128,7 @@ export const BuyTicketsForm = ({ walletState, ticketPrice, onPurchase }: BuyTick
         {/* Quick Buy Buttons */}
         <div>
           <Label className="text-sm text-muted-foreground mb-2 block">Quick Buy</Label>
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-3 sm:flex sm:flex-wrap gap-2">
             {quickBuyOptions.map((amount) => (
               <Button
                 key={amount}
