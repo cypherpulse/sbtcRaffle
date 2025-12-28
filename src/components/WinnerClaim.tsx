@@ -97,42 +97,42 @@ export const WinnerClaim = ({ walletState, onClaim, refreshTrigger }: WinnerClai
     <Card className="border-2 border-primary bg-primary/10 glow-orange-intense animate-pulse-glow">
       <CardHeader className="text-center">
         <div className="flex justify-center mb-4">
-          <PartyPopper className="w-16 h-16 text-primary animate-bounce-subtle" />
+          <PartyPopper className="w-12 h-12 sm:w-16 sm:h-16 text-primary animate-bounce-subtle" />
         </div>
-        <CardTitle className="text-3xl font-display text-primary animate-text-glow">
+        <CardTitle className="text-2xl sm:text-3xl font-display text-primary animate-text-glow">
           🎉 YOU WON! 🎉
         </CardTitle>
-        <CardDescription className="text-lg text-foreground">
+        <CardDescription className="text-base sm:text-lg text-foreground">
           Congratulations! You are the lucky winner!
         </CardDescription>
       </CardHeader>
-      <CardContent className="space-y-6">
-        <div className="text-center p-6 rounded-lg bg-secondary/50 border border-primary/30">
+      <CardContent className="space-y-4 sm:space-y-6">
+        <div className="text-center p-4 sm:p-6 rounded-lg bg-secondary/50 border border-primary/30">
           <p className="text-sm text-muted-foreground mb-2">Your Prize:</p>
           <div className="flex items-center justify-center gap-3">
-            <span className="text-4xl font-display font-bold jackpot-counter">
+            <span className="text-3xl sm:text-4xl font-display font-bold jackpot-counter">
               {formatMicroUnits(jackpot, 8)}
             </span>
-            <span className="text-2xl text-primary font-semibold">sBTC</span>
-            <BitcoinSymbol className="text-3xl text-primary animate-bounce-subtle" />
+            <span className="text-xl sm:text-2xl text-primary font-semibold">sBTC</span>
+            <BitcoinSymbol className="text-2xl sm:text-3xl text-primary animate-bounce-subtle" />
           </div>
         </div>
 
         <Button
           onClick={handleClaim}
           disabled={isClaiming}
-          className="w-full h-16 text-xl font-bold bg-gradient-to-r from-primary via-yellow-500 to-primary hover:from-primary/90 hover:via-yellow-400 hover:to-primary/90 text-white glow-orange-intense"
+          className="w-full h-12 sm:h-16 text-lg sm:text-xl font-bold bg-gradient-to-r from-primary via-yellow-500 to-primary hover:from-primary/90 hover:via-yellow-400 hover:to-primary/90 text-white glow-orange-intense"
         >
           {isClaiming ? (
             <>
-              <Loader2 className="w-7 h-7 mr-3 animate-spin" />
+              <Loader2 className="w-5 h-5 sm:w-7 sm:h-7 mr-2 sm:mr-3 animate-spin" />
               Claiming Your sBTC...
             </>
           ) : (
             <>
-              <Gift className="w-7 h-7 mr-3" />
+              <Gift className="w-5 h-5 sm:w-7 sm:h-7 mr-2 sm:mr-3" />
               Claim Your sBTC Prize
-              <BitcoinSymbol className="ml-3 text-2xl" />
+              <BitcoinSymbol className="ml-2 sm:ml-3 text-xl sm:text-2xl" />
             </>
           )}
         </Button>
