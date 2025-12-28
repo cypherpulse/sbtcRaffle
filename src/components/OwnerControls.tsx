@@ -45,11 +45,11 @@ export const OwnerControls = ({ walletState, onAction }: OwnerControlsProps) => 
   return (
     <Card className="border-2 border-yellow-500/30 bg-yellow-500/5">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2 text-yellow-400">
-          <Crown className="w-6 h-6" />
+        <CardTitle className="flex items-center gap-2 text-yellow-400 text-lg sm:text-xl">
+          <Crown className="w-5 h-5 sm:w-6 sm:h-6" />
           Owner Controls
         </CardTitle>
-        <CardDescription>
+        <CardDescription className="text-sm sm:text-base">
           Administrative functions for the raffle contract owner
         </CardDescription>
       </CardHeader>
@@ -57,16 +57,16 @@ export const OwnerControls = ({ walletState, onAction }: OwnerControlsProps) => 
         <Button
           onClick={handleDrawWinner}
           disabled={isDrawing}
-          className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold"
+          className="w-full h-12 sm:h-14 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold text-sm sm:text-base"
         >
           {isDrawing ? (
             <>
-              <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+              <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2 animate-spin" />
               Drawing Winner...
             </>
           ) : (
             <>
-              <Zap className="w-5 h-5 mr-2" />
+              <Zap className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               Draw Random Winner
             </>
           )}
