@@ -78,25 +78,25 @@ export const RaffleInfo = ({ walletState, refreshTrigger }: RaffleInfoProps) => 
   const ticketPriceDisplay = formatMicroUnits(data.ticketPrice, 8);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
       {/* Jackpot Card - Full width on mobile, spans 2 cols on larger */}
       <Card className="md:col-span-2 lg:col-span-1 card-gradient border-glow overflow-hidden relative">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
         <CardHeader className="relative pb-2">
-          <CardTitle className="flex items-center gap-2 text-muted-foreground text-sm uppercase tracking-wide">
-            <Trophy className="w-5 h-5 text-primary" />
+          <CardTitle className="flex items-center gap-2 text-muted-foreground text-xs sm:text-sm uppercase tracking-wide">
+            <Trophy className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
             Current Jackpot
           </CardTitle>
         </CardHeader>
         <CardContent className="relative">
           <div className="flex items-baseline gap-2">
-            <span className="text-4xl lg:text-5xl font-display font-bold jackpot-counter animate-text-glow">
+            <span className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold jackpot-counter animate-text-glow">
               {isLoading ? '...' : jackpotDisplay}
             </span>
-            <span className="text-xl text-primary font-semibold">sBTC</span>
-            <BitcoinSymbol className="text-2xl text-primary animate-bounce-subtle" />
+            <span className="text-lg sm:text-xl text-primary font-semibold">sBTC</span>
+            <BitcoinSymbol className="text-xl sm:text-2xl text-primary animate-bounce-subtle" />
           </div>
-          <p className="text-sm text-muted-foreground mt-2">
+          <p className="text-xs sm:text-sm text-muted-foreground mt-2">
             Total pot accumulated from ticket sales
           </p>
         </CardContent>
@@ -105,19 +105,19 @@ export const RaffleInfo = ({ walletState, refreshTrigger }: RaffleInfoProps) => 
       {/* Total Tickets */}
       <Card className="card-gradient border-glow">
         <CardHeader className="pb-2">
-          <CardTitle className="flex items-center gap-2 text-muted-foreground text-sm uppercase tracking-wide">
-            <Users className="w-5 h-5 text-primary" />
+          <CardTitle className="flex items-center gap-2 text-muted-foreground text-xs sm:text-sm uppercase tracking-wide">
+            <Users className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
             Total Tickets
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex items-baseline gap-2">
-            <span className="text-3xl lg:text-4xl font-display font-bold text-foreground">
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-foreground">
               {isLoading ? '...' : data.totalTickets.toString()}
             </span>
-            <Ticket className="w-6 h-6 text-primary" />
+            <Ticket className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
           </div>
-          <p className="text-sm text-muted-foreground mt-2">
+          <p className="text-xs sm:text-sm text-muted-foreground mt-2">
             Tickets sold this round
           </p>
         </CardContent>
@@ -126,19 +126,19 @@ export const RaffleInfo = ({ walletState, refreshTrigger }: RaffleInfoProps) => 
       {/* Ticket Price */}
       <Card className="card-gradient border-glow">
         <CardHeader className="pb-2">
-          <CardTitle className="flex items-center gap-2 text-muted-foreground text-sm uppercase tracking-wide">
-            <Coins className="w-5 h-5 text-primary" />
+          <CardTitle className="flex items-center gap-2 text-muted-foreground text-xs sm:text-sm uppercase tracking-wide">
+            <Coins className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
             Ticket Price
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex items-baseline gap-2">
-            <span className="text-3xl lg:text-4xl font-display font-bold text-foreground">
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-foreground">
               {isLoading ? '...' : ticketPriceDisplay}
             </span>
-            <span className="text-lg text-primary font-semibold">sBTC</span>
+            <span className="text-base sm:text-lg text-primary font-semibold">sBTC</span>
           </div>
-          <p className="text-sm text-muted-foreground mt-2">
+          <p className="text-xs sm:text-sm text-muted-foreground mt-2">
             Cost per raffle entry
           </p>
         </CardContent>
@@ -148,19 +148,19 @@ export const RaffleInfo = ({ walletState, refreshTrigger }: RaffleInfoProps) => 
       {walletState.isConnected && (
         <Card className="card-gradient border-glow border-primary/30">
           <CardHeader className="pb-2">
-            <CardTitle className="flex items-center gap-2 text-muted-foreground text-sm uppercase tracking-wide">
-              <Ticket className="w-5 h-5 text-primary" />
+            <CardTitle className="flex items-center gap-2 text-muted-foreground text-xs sm:text-sm uppercase tracking-wide">
+              <Ticket className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
               Your Tickets
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex items-baseline gap-2">
-              <span className="text-3xl lg:text-4xl font-display font-bold text-primary">
+              <span className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-primary">
                 {isLoading ? '...' : data.myTickets.toString()}
               </span>
-              <span className="text-lg text-muted-foreground">tickets</span>
+              <span className="text-base sm:text-lg text-muted-foreground">tickets</span>
             </div>
-            <p className="text-sm text-muted-foreground mt-2">
+            <p className="text-xs sm:text-sm text-muted-foreground mt-2">
               Your entries in current round
             </p>
           </CardContent>
@@ -170,15 +170,15 @@ export const RaffleInfo = ({ walletState, refreshTrigger }: RaffleInfoProps) => 
       {/* Raffle Status */}
       <Card className="card-gradient border-glow">
         <CardHeader className="pb-2">
-          <CardTitle className="flex items-center gap-2 text-muted-foreground text-sm uppercase tracking-wide">
-            <Clock className="w-5 h-5 text-primary" />
+          <CardTitle className="flex items-center gap-2 text-muted-foreground text-xs sm:text-sm uppercase tracking-wide">
+            <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
             Status
           </CardTitle>
         </CardHeader>
         <CardContent>
           <Badge
             variant={data.isActive ? 'default' : 'secondary'}
-            className={`text-lg px-4 py-1 ${
+            className={`text-base sm:text-lg px-3 sm:px-4 py-1 ${
               data.isActive
                 ? 'bg-green-500/20 text-green-400 border-green-500/50'
                 : 'bg-yellow-500/20 text-yellow-400 border-yellow-500/50'
@@ -188,8 +188,8 @@ export const RaffleInfo = ({ walletState, refreshTrigger }: RaffleInfoProps) => 
           </Badge>
           {data.winner && (
             <div className="mt-3">
-              <p className="text-sm text-muted-foreground">Winner:</p>
-              <p className="text-sm font-mono text-primary break-all">
+              <p className="text-xs sm:text-sm text-muted-foreground">Winner:</p>
+              <p className="text-xs sm:text-sm font-mono text-primary break-all">
                 {shortenAddress(data.winner)}
               </p>
             </div>
